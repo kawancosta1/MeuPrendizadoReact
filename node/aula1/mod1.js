@@ -1,16 +1,14 @@
-const nome = 'luiz';
-const sobrenome = 'Miranda';
+const mod1 = require('./app');
+const path = require('path');
+const axios = require('axios')
 
-const falanome = () => {
+// usando o que foi exportado
+mod1.falaNome(); // Luiz Miranda
+console.log(mod1.QualquerCoisa); // hahahha eu
 
-    console.log(nome,sobrenome)
+// usando a classe Pessoa
+const p1 = new mod1.Pessoa('Kawan');
+console.log(p1.nome); // Kawan
 
-}
-
-exports.nome = nome 
-exports.sobrenome = sobrenome
-exports.falanome = falanome
-//podemos usar o this ao inves do export
-this.qualquercoisa = 'o que eu quiser '
-
-console.log(module.exports)
+//o axios retorna uma promisse
+axios('https://www.otaviomiranda.com.br/files/json/pessoas.json').then(response => console.log(response.data)).catch(e => console.log(e))

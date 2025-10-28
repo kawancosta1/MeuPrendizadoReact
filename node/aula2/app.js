@@ -1,3 +1,3 @@
-const mult = require = require('./mod2')
+const mult = require('./mod2')
 
-console.log(mult(2,2))
+console.log(mult(8,9))
